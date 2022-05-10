@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="referal.css">
+    <link rel="stylesheet" href="referal.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -162,30 +162,28 @@
                   data-ok="Country"
                 />
               </div>
-            </div>
-            <div class="row form-row">
-                <div class="col-12 col-lg-3 col-md-6 col-sm-6">
-                    <label for="streetaddress">Street Address</label>
-                    <input
-                      class="multisteps-form__input form-control shadow-none"
-                      type="text"
-                      name="streetaddress"
-                      placeholder="streetaddress"
-                      id="streetaddress"
-                      data-ok="streetaddress"
-                    />
-                  </div>
-                  <div class="col-12 col-lg-3 col-md-6 col-sm-6">
-                    <label for="State">State</label>
-                    <input
-                      class="multisteps-form__input form-control shadow-none"
-                      type="text"
-                      name="State"
-                      placeholder="State"
-                      id="State"
-                      data-ok="State"
-                    />
-                  </div>
+              <div class="col-12 col-lg-3 col-md-6 col-sm-6 street-col">
+                <label for="streetaddress">Street Address</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="streetaddress"
+                  placeholder="streetaddress"
+                  id="streetaddress"
+                  data-ok="streetaddress"
+                />
+              </div>
+              <div class="col-12 col-lg-3 col-md-6 col-sm-6 state-col">
+                <label for="State">State</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="State"
+                  placeholder="State"
+                  id="State"
+                  data-ok="State"
+                />
+              </div>
             </div>
             <div class="row form-row">
               <div class="col-12 col-sm-6">
@@ -282,6 +280,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="referal.js"></script>
+    <script src="buttons.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
