@@ -1,0 +1,143 @@
+.toggle {
+    --width: 55px;
+    --height: calc(var(--width) / 2);
+    --border-radius: calc(var(--height) / 2);
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .toggle__input {
+    display: none;
+  }
+  
+  .toggle__fill {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--border-radius);
+    background: #dddddd;
+    transition: background 0.2s;
+  }
+  
+  .toggle__input:checked ~ .toggle__fill {
+    background: #009578;
+  }
+  .toggle:hover .toggle__fill::after {
+    background: #009578;
+    transition: 0.5s;
+  }
+  .toggle:hover .toggle__fill::before {
+    transition: 0.5s;
+    background: rgb(0, 0, 0, 0.2);
+  }
+  .toggle__fill::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    height: 45px;
+    width: 45px;
+    border: 0;
+    /* box-shadow: 0 0 10px rgb(0 0 0 / 25%); */
+    border-radius: 50%;
+    transition: transform 0.2s;
+  }
+  .toggle__fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 28px;
+    width: 28px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: var(--border-radius);
+    transition: transform 0.2s;
+  }
+  .toggle__input:checked ~ .toggle__fill::after {
+    transform: translateX(var(--height));
+  }
+  .toggle__input:checked ~ .toggle__fill::before {
+    transform: translateX(var(--height));
+  }
+  .toggle_txt {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .form-control:disabled,
+  .form-control[readonly] {
+    background: white;
+  }
+  /* .input-group > .form-control,
+  .input-group > .form-select {
+    border: 0;
+    border-bottom: 2px solid black;
+  } */
+  .referal-container {
+    /* padding-top: 2.4rem; */
+  }
+  .referal-toggle{
+    margin-top: 1rem;
+  }
+  .refered-container {
+    margin-top: 3.9rem;
+  }
+  .country-container {
+    margin-top: 1.5rem;
+  }
+  .referal-code-container,
+  .country-code-container,
+  .referal-name-container {
+    position: relative;
+  }
+  .referal-code-label,
+  .country-code-label {
+    position: absolute;
+    z-index: 3;
+  }
+  /* input  */
+  .referal-code-container > ul,
+  .country-code-container > ul,
+  .referal-name-container > ul {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .referal-code-list,
+  .country-code-list,
+  .referal-name-list {
+    height: fit-content;
+    max-height: 175px;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    top: 30px;
+    display: none;
+    background-color: white;
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+      0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+    border-radius: 0 0 5px 5px;
+    z-index: 2;
+  }
+  /* .referal-list-items,
+  .country-list-items {
+    padding: 10px 5px;
+  } */
+  .referal-list-items:hover,
+  .country-list-items {
+    /* background-color: #dddddd; */
+  }
+  /* #referal-code-input,
+  #country-code-input,
+  #referal-name-input {
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: none;
+  } */
+  /* end of referal and country css */
+@media (max-width : 575px) {
+    #referal{
+        gap: 1rem;
+    }
+}  

@@ -1,72 +1,287 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="referal.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Purpose</title>
+  </head>
+  <body>
     <main>
-        <div class="progress-container">
-            <div class="dot-container">
-                <div class="dot dot1"></div>
-                <div class="dot dot2"></div>
-                <div class="dot dot3"></div>
-                <div class="dot dot4"></div>
-                <div class="dot dot5"></div>
-            </div>
-            <div class="blue-dot-container">
-                <div class="blue-dot blue-dot1"></div>
-                <div class="blue-dot blue-dot2"></div>
-                <div class="blue-dot blue-dot3"></div>
-                <div class="blue-dot blue-dot4"></div>
-                <div class="blue-dot blue-dot5"></div>
-            </div>
-            <div class="txt-container">
-                <div class="txt txt1">Basic Info</div>
-                <div class="txt txt2">Address Info</div>
-                <div class="txt txt3">Share Options</div>
-                <div class="txt txt4">Payment Options</div>
-                <div class="txt txt5">Verify</div>
-            </div>
-            <div class="line"></div>
-            <div class="blue-line"></div>
+      <div class="progress-container">
+        <div class="dot-container">
+          <div class="dot dot1"></div>
+          <div class="dot dot2"></div>
+          <div class="dot dot3"></div>
+          <div class="dot dot4"></div>
+          <div class="dot dot5"></div>
         </div>
-        <div class="section-container">
+        <div class="blue-dot-container">
+          <div class="blue-dot blue-dot1"></div>
+          <div class="blue-dot blue-dot2"></div>
+          <div class="blue-dot blue-dot3"></div>
+          <div class="blue-dot blue-dot4"></div>
+          <div class="blue-dot blue-dot5"></div>
+        </div>
+        <div class="txt-container">
+          <div class="txt txt1">Basic Info</div>
+          <div class="txt txt2">Address Info</div>
+          <div class="txt txt3">Share Options</div>
+          <div class="txt txt4">Payment Options</div>
+          <div class="txt txt5">Verify</div>
+        </div>
+        <div class="line"></div>
+        <div class="blue-line"></div>
+      </div>
+      <div class="section-container">
+        <section class="section1">
+          <div class="sectioncontent section1content">
+            <button class="next next1">Next</button>
+            <div class="address-title">Address</div>
+            <div class="row form-row">
+              <div class="col-12 col-sm-6">
+                <label for="FirstName">First Name</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="FirstName"
+                  placeholder="First Name"
+                  id="FirstName"
+                  data-ok="FirstName"
+                />
+              </div>
+              <div class="col-12 col-sm-6">
+                <label for="MiddleName">Middle Name</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="MiddleName"
+                  placeholder="MiddleName"
+                  id="MiddleName"
+                  data-ok="MiddleName"
+                />
+              </div>
+            </div>
+            <div class="row form-row">
+              <div class="col-12 col-sm-6">
+                <label for="LastName">Last Name</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="LastName"
+                  placeholder="Last Name"
+                  id="LastName"
+                  data-ok="LastName"
+                />
+              </div>
+              <div class="col-12 col-sm-6">
+                <label for="PhoneNumber">Phone Number</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="tel"
+                  name="PhoneNumber"
+                  placeholder="Phone Number"
+                  id="PhoneNumber"
+                  data-ok="PhoneNumber"
+                />
+              </div>
+            </div>
+            <!-- referal part -->
+            <div class="col-12 referal-toggle">
+              <label class="toggle" for="myToggle">
+                <input
+                  class="toggle__input"
+                  name=""
+                  type="checkbox"
+                  id="myToggle"
+                />
+                <div class="toggle__fill"></div>
+                <div class="toggle_txt">
+                  Select Refernce By Name
+                  <p>false</p>
+                </div>
+              </label>
+            </div>
+            <div class="row" id="referal">
+              <div class="col-12 col-sm-6 referal-container">
+                <div class="input-group col-6 referal-code-container">
+                  <!-- <label class="referal-code-label" > Referal Code</label> -->
 
-            <section class="section1">
-                <button class="next next1">Next</button>
-                section1
-            </section>
-            <section class="section2">
-                <button class = "prev prev2">Prev</button>
-                <button class="next next2">Next</button>
-                section2
-            </section>
-            <section class="section3">
-                <button class = "prev prev3">Prev</button>
-                <button class="next next3">Next</button>
-                section3
-            </section>
-            <section class="section4">
-                <button class = "prev prev4">Prev</button>
-                <button class="next next4">Next</button>
-                section4
-            </section>
-            <section class="section5">
-                <button class = "prev prev5">Prev</button>
-                <button class="next next5">Next</button>
-                section5
-            </section>
-            <section class="section6">
-                <button class = "prev prev6">Prev</button>
-                section6
-            </section>
-        </div>
+                  <input
+                    class="multisteps-form__input form-control shadow-none"
+                    type="text"
+                    id="referal-code-input"
+                    placeholder="Referal-code"
+                  />
+
+                  <ul
+                    class="referal-code-list col-sm-12 col-md-12 col-lg-12 col-xl-6"
+                  ></ul>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 refered-container standard_input">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="refered_name"
+                  aria-label="refered_name"
+                  disabled
+                  placeholder="Refered Name"
+                />
+              </div>
+            </div>
+            <!-- end of referal part -->
+            <div class="row form-row">
+              <div class="col-12 col-lg-3 col-md-6 col-sm-6">
+                <label for="HouseNumber">House Number</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="HouseNumber"
+                  placeholder="House Number"
+                  id="HouseNumber"
+                  data-ok="HouseNumber"
+                />
+              </div>
+              <div class="col-12 col-lg-3 col-md-6 col-sm-6">
+                <label for="Country">Country</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="Country"
+                  placeholder="Country"
+                  id="Country"
+                  data-ok="Country"
+                />
+              </div>
+            </div>
+            <div class="row form-row">
+                <div class="col-12 col-lg-3 col-md-6 col-sm-6">
+                    <label for="streetaddress">Street Address</label>
+                    <input
+                      class="multisteps-form__input form-control shadow-none"
+                      type="text"
+                      name="streetaddress"
+                      placeholder="streetaddress"
+                      id="streetaddress"
+                      data-ok="streetaddress"
+                    />
+                  </div>
+                  <div class="col-12 col-lg-3 col-md-6 col-sm-6">
+                    <label for="State">State</label>
+                    <input
+                      class="multisteps-form__input form-control shadow-none"
+                      type="text"
+                      name="State"
+                      placeholder="State"
+                      id="State"
+                      data-ok="State"
+                    />
+                  </div>
+            </div>
+            <div class="row form-row">
+              <div class="col-12 col-sm-6">
+                <label for="City">City</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="City"
+                  placeholder="City"
+                  id="City"
+                  data-ok="City"
+                />
+              </div>
+
+              <div class="col-12 col-sm-6">
+                <label for="ZipCode">ZipCode / Postal</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="ZipCode"
+                  placeholder="ZipCode"
+                  id="ZipCode"
+                  data-ok="ZipCode"
+                />
+              </div>
+            </div>
+            <div class="row form-row">
+              <div class="col-12 col-sm-6">
+                <label for="Nationality">Nationality</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="Nationality"
+                  placeholder="Nationality"
+                  id="Nationality"
+                  data-ok="Nationality"
+                />
+              </div>
+              <div class="col-12 col-sm-6">
+                <label for="Email">E-mail</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="email"
+                  name="Email"
+                  placeholder="E-mail"
+                  id="Email"
+                  data-ok="Email"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section2">
+          <div class="sectioncontent section2content">
+            <button class="prev prev2">Prev</button>
+            <button class="next next2">Next</button>
+            section2
+          </div>
+        </section>
+        <section class="section3">
+          <div class="sectioncontent section3content">
+            <button class="prev prev3">Prev</button>
+            <button class="next next3">Next</button>
+            section3
+          </div>
+        </section>
+        <section class="section4">
+          <div class="sectioncontent section4content">
+            <button class="prev prev4">Prev</button>
+            <button class="next next4">Next</button>
+            section4
+          </div>
+        </section>
+        <section class="section5">
+          <div class="sectioncontent section5content">
+            <button class="prev prev5">Prev</button>
+            section5
+          </div>
+        </section>
+      </div>
     </main>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+    <script src="referal.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
