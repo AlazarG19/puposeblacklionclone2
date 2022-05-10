@@ -167,13 +167,16 @@ section {
   font-size: 1.75rem;
   font-weight: 600;
 }
-.form-row .street-col{
-  margin-top: 1rem;
-}
-.form-row  .state-col{
-  margin-top: 1rem;
-}
+
 /* referal and country css */
+@media (max-width : 990px) {
+  .form-row .street-col{
+    margin-top: 1rem;
+  }
+  .form-row  .state-col{
+    margin-top: 1rem;
+  }
+}
 @media (max-width: 740px) {
   .txt {
     display: none;

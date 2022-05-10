@@ -1,0 +1,50 @@
+.form-control2 {
+	position: relative;
+}
+
+.form-control2 input {
+	border-radius: 4px;
+	display: block;
+}
+
+.form-control2 input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control2.success input {
+	border-color: #2ecc71;
+}
+
+.form-control2.error input {
+	border-color: #e74c3c;
+}
+
+.form-control2 i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.form-control2.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-control2.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-control2 small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: -20px;
+    left: 10px;
+	visibility: hidden;
+}
+
+.form-control2.error small {
+	visibility: visible;
+}
