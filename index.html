@@ -141,7 +141,7 @@
                   />
 
                   <ul
-                    class="referal-code-list col-sm-12 col-md-12 col-lg-12 col-xl-6"
+                    class="referal-code-list col-12"
                   ></ul>
                 </div>
               </div>
@@ -173,20 +173,24 @@
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
-              <div class="col-12 col-lg-3 col-md-6 col-sm-6 form-control2">
+              <div class="col-12 col-lg-3 col-md-6 col-sm-6 form-control2 ">
                 <label for="Country">Country</label>
-                <input
+                <div class="input-group col-12 country-code-container">
+                  <!-- <label class="referal-code-label" > Referal Code</label> -->
+                  <input
                   class="multisteps-form__input form-control shadow-none"
                   type="text"
                   name="Country"
                   data-valid="false"
                   placeholder="Country"
-                  id="Country"
                   data-ok="Country"
-                />
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <small>Error message</small>
+                    id="country-code-input"
+                  />
+                  <small>Error message</small>
+                  <ul
+                    class="country-code-list col-12"
+                  ></ul>
+                </div>
               </div>
               <div
                 class="col-12 col-lg-3 col-md-6 col-sm-6 form-control2 street-col"

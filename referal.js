@@ -462,11 +462,11 @@ function removeElementsCode() {
     item.remove()
   })
 }
-// let inputCountry = document.getElementById('country-code-input')
+let inputCountry = document.getElementById('country-code-input')
 // console.log(inputCountry, 'input')
 function displayCountry(value, key) {
   inputCountry.value = value
-  document.querySelector('#country_name').placeholder = key
+  document.querySelector('#country-code-input').placeholder = key
   removeElementsCountry()
   console.log('display country called')
 }
@@ -477,101 +477,101 @@ function removeElementsCountry() {
     item.remove()
   })
 }
-// inputCountry.addEventListener('keyup', (e) => {
-//   // console.log(sortedNames)
-//   //loop through above array
-//   // Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
-//   console.log('input country touced')
-//   fetch('https://apiforsample.herokuapp.com/countries')
-//     .then((response) => response.json())
-//     .then((data) => {
-//       let countries = data.countries
-//       removeElementsCountry()
+inputCountry.addEventListener('keyup', (e) => {
+  // console.log(sortedNames)
+  //loop through above array
+  // Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
+  console.log('input country touced')
+  fetch('https://apiforsample.herokuapp.com/countries')
+    .then((response) => response.json())
+    .then((data) => {
+      let countries = data.countries
+      removeElementsCountry()
 
-//       // console.log(countries)
-//       for (let i of countries) {
-//         //convert inputCountry to lowercase and compare with each string
-//         // console.log(i)
-//         // console.log(i.toLowerCase().startsWith(inputCountry.value.toLowerCase()))
-//         document.querySelector('.country-code-list').style.display = 'block'
-//         if (
-//           i.toLowerCase().startsWith(inputCountry.value.toLowerCase()) &&
-//           inputCountry.value != ''
-//         ) {
-//           //create li element
-//           let listItem = document.createElement('li')
-//           //One common class name
-//           listItem.setAttribute('id', i)
-//           listItem.classList.add('country-list-items')
-//           listItem.style.cursor = 'pointer'
-//           //Display matched part in bold
-//           let word = i.substr(0, inputCountry.value.length)
-//           word += i.substr(inputCountry.value.length)
-//           //display the value in array
-//           // console.log("word",word)
-//           listItem.innerHTML = word
-//           document.querySelector('.country-code-list').appendChild(listItem)
-//         }
-//       }
-//       console.log('before check')
-//       $(document).click(function (evt) {
-//         console.log(evt.target.id)
-//         if (countries.indexOf(evt.target.id) != -1) {
-//           displayCountry(evt.target.id)
+      // console.log(countries)
+      for (let i of countries) {
+        //convert inputCountry to lowercase and compare with each string
+        // console.log(i)
+        // console.log(i.toLowerCase().startsWith(inputCountry.value.toLowerCase()))
+        document.querySelector('.country-code-list').style.display = 'block'
+        if (
+          i.toLowerCase().startsWith(inputCountry.value.toLowerCase()) &&
+          inputCountry.value != ''
+        ) {
+          //create li element
+          let listItem = document.createElement('li')
+          //One common class name
+          listItem.setAttribute('id', i)
+          listItem.classList.add('country-list-items')
+          listItem.style.cursor = 'pointer'
+          //Display matched part in bold
+          let word = i.substr(0, inputCountry.value.length)
+          word += i.substr(inputCountry.value.length)
+          //display the value in array
+          // console.log("word",word)
+          listItem.innerHTML = word
+          document.querySelector('.country-code-list').appendChild(listItem)
+        }
+      }
+      console.log('before check')
+      $(document).click(function (evt) {
+        console.log(evt.target.id)
+        if (countries.indexOf(evt.target.id) != -1) {
+          displayCountry(evt.target.id)
 
-//           if (document.querySelector('.country-code-list') != null) {
-//             document.querySelector('.country-code-list').style.display = 'block'
-//           }
-//           document.querySelector('.country-code-list').style.display = 'none'
-//         } else if (evt.target.id == 'country-code-input') {
-//           console.log('that')
-//           if (evt.target.value !== '') {
-//             removeElementsCountry()
-//             for (let i of countries) {
-//               //convert input to lowercase and compare with each string
-//               // console.log(i)
-//               // console.log(i.toLowerCase().startsWith(inputCountry.value.toLowerCase()))
-//               if (
-//                 i.toLowerCase().startsWith(inputCountry.value.toLowerCase()) &&
-//                 inputCountry.value != ''
-//               ) {
-//                 //create li element
-//                 let listItem = document.createElement('li')
-//                 //One common class name
-//                 listItem.setAttribute('id', i)
-//                 listItem.classList.add('country-list-items')
-//                 listItem.style.cursor = 'pointer'
-//                 //Display matched part in bold
-//                 let word = i.substr(0, inputCountry.value.length)
-//                 word += i.substr(inputCountry.value.length)
-//                 //display the value in array
-//                 // console.log("word",word)
-//                 listItem.innerHTML = word
-//                 document
-//                   .querySelector('.country-code-list')
-//                   .appendChild(listItem)
-//               }
-//             }
-//           }
-//           if (document.querySelector('.country-code-list') != null) {
-//             document.querySelector('.country-code-list').style.display = 'block'
-//           }
-//         } else if (evt.target.id == 'country-input') {
-//           if (document.querySelector('.country-code-list') != null) {
-//             document.querySelector('.country-code-list').style.display = 'block'
-//           }
-//         } else {
-//           // console.log('this', evt.target.id)
-//           if (document.querySelector('.country-code-list') != null) {
-//             document.querySelector('.country-code-list').style.display = 'none'
-//           }
-//           if (document.querySelector('.country-code-list') != null) {
-//             document.querySelector('.country-code-list').style.display = 'none'
-//           }
-//         }
-//         //For descendants of menu_content being clicked, remove this check if you do not want to put constraint on descendants.
-//         // if ($(evt.target).closest('#menu_content').length) {
-//         // }
-//       })
-//     })
-// })
+          if (document.querySelector('.country-code-list') != null) {
+            document.querySelector('.country-code-list').style.display = 'block'
+          }
+          document.querySelector('.country-code-list').style.display = 'none'
+        } else if (evt.target.id == 'country-code-input') {
+          console.log('that')
+          if (evt.target.value !== '') {
+            removeElementsCountry()
+            for (let i of countries) {
+              //convert input to lowercase and compare with each string
+              // console.log(i)
+              // console.log(i.toLowerCase().startsWith(inputCountry.value.toLowerCase()))
+              if (
+                i.toLowerCase().startsWith(inputCountry.value.toLowerCase()) &&
+                inputCountry.value != ''
+              ) {
+                //create li element
+                let listItem = document.createElement('li')
+                //One common class name
+                listItem.setAttribute('id', i)
+                listItem.classList.add('country-list-items')
+                listItem.style.cursor = 'pointer'
+                //Display matched part in bold
+                let word = i.substr(0, inputCountry.value.length)
+                word += i.substr(inputCountry.value.length)
+                //display the value in array
+                // console.log("word",word)
+                listItem.innerHTML = word
+                document
+                  .querySelector('.country-code-list')
+                  .appendChild(listItem)
+              }
+            }
+          }
+          if (document.querySelector('.country-code-list') != null) {
+            document.querySelector('.country-code-list').style.display = 'block'
+          }
+        } else if (evt.target.id == 'country-input') {
+          if (document.querySelector('.country-code-list') != null) {
+            document.querySelector('.country-code-list').style.display = 'block'
+          }
+        } else {
+          // console.log('this', evt.target.id)
+          if (document.querySelector('.country-code-list') != null) {
+            document.querySelector('.country-code-list').style.display = 'none'
+          }
+          if (document.querySelector('.country-code-list') != null) {
+            document.querySelector('.country-code-list').style.display = 'none'
+          }
+        }
+        //For descendants of menu_content being clicked, remove this check if you do not want to put constraint on descendants.
+        // if ($(evt.target).closest('#menu_content').length) {
+        // }
+      })
+    })
+})

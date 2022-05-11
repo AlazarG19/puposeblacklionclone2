@@ -71,6 +71,7 @@ const HouseNumber = document.getElementById('HouseNumber')
 const StreetAddress = document.getElementById('streetaddress')
 const State = document.getElementById('State')
 const City = document.getElementById('City')
+const Country = document.getElementById('country-code-input')
 const ZipCode = document.getElementById('ZipCode')
 const Email = document.getElementById('Email')
 const Nationality = document.getElementById('Nationality')
@@ -89,7 +90,12 @@ function checkInputs() {
   const ZipCodeValue = ZipCode.value.trim()
   const EmailValue = Email.value.trim()
   const NationalityValue = Nationality.value.trim()
-
+  const CountryValue = Country.value.trim()
+  if (CountryValue === '') {
+    setErrorFor2(Country, 'Country cannot be blank')
+  } else {
+    setSuccessFor2(Country)
+  }
   if (NationalityValue === '') {
     setErrorFor(Nationality, 'Nationality cannot be blank')
   } else {
@@ -183,7 +189,13 @@ function setErrorFor2(input, message) {
     formControl.className =
       'col-12 col-lg-3 col-md-6 col-sm-6 form-control2 error street-col'
     small.innerText = message
-  } else {
+  } else if(input.id === "country-code-input"){
+    const small = formControl.querySelector('small')
+    formControl.className =
+      'col-12 form-control2 error'
+    small.innerText = message
+  }
+  else {
     const small = formControl.querySelector('small')
     formControl.className =
       'col-12 col-lg-3 col-md-6 col-sm-6 form-control2 error'
@@ -193,9 +205,16 @@ function setErrorFor2(input, message) {
 }
 function setSuccessFor2(input) {
   input.dataset.valid = 'true'
-  const formControl = input.parentElement
-  formControl.className =
-    'col-12 col-lg-3 col-md-6 col-sm-6 form-control2 success'
+  if(input.id === "country-code-input"){
+    const formControl = input.parentElement
+    formControl.className =
+      'col-12 form-control2 success'
+  }else{
+    const formControl = input.parentElement
+    formControl.className =
+      'col-12 col-lg-3 col-md-6 col-sm-6 form-control2 success'
+  }
+  // const formControl = input.parentElement
 }
 function setSuccessFor(input) {
   input.dataset.valid = 'true'
