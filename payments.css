@@ -1,4 +1,3 @@
-/* shares choice  */
 .share_choice_container,
 .intpay_choice_container,
 .payment_card_choice_container,
@@ -154,14 +153,4 @@
 }
 .intpay_option_inner {
   overflow: none;
-}
-.shares_wrapper {
-  display: none;
-}
-.share_option_value {
-  display: none;
-}
-.percentage-error,.share-error,.percentage-error2,.percentage-error3,.percentage-error5{
-    display: none;
-    color: red;
 }

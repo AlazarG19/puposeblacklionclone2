@@ -1,0 +1,33 @@
+.vow > p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-left: 1rem;
+    font-weight: 600;
+  }
+  .av > h3 {
+    font-size: 0.85rem;
+    padding-left: 0.7rem;
+  }
+  .agreement {
+    padding-left: 25px;
+  }
+  .agreement > input {
+    margin: 13px;
+    margin-left: 0;
+  }
+  .user-guide {
+    margin-left: 0.7rem;
+  }
+  .user-guide > p {
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 1.2rem;
+  }
+  .user-guide > a {
+    border: 2px solid orange;
+    padding: 1rem;
+    text-decoration: none;
+  }
+  .user-guide > a:hover {
+    box-shadow: 12px 6px 6px rgb(64 224 208 / 20%);
+  }

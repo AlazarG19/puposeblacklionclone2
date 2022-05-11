@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="referal.css" />
     <link rel="stylesheet" href="formvalidation.css" />
+    <link rel="stylesheet" href="share.css" />
+    <link rel="stylesheet" href="payments.css" />
+    <link rel="stylesheet" href="verify.css">
+    <link rel="stylesheet" href="info.css">
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="share.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -140,9 +143,7 @@
                     placeholder="Referal-code"
                   />
 
-                  <ul
-                    class="referal-code-list col-12"
-                  ></ul>
+                  <ul class="referal-code-list col-12"></ul>
                 </div>
               </div>
               <div class="col-12 col-sm-6 refered-container standard_input">
@@ -173,23 +174,21 @@
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
-              <div class="col-12 col-lg-3 col-md-6 col-sm-6 form-control2 ">
+              <div class="col-12 col-lg-3 col-md-6 col-sm-6 form-control2">
                 <label for="Country">Country</label>
                 <div class="input-group col-12 country-code-container">
                   <!-- <label class="referal-code-label" > Referal Code</label> -->
                   <input
-                  class="multisteps-form__input form-control shadow-none"
-                  type="text"
-                  name="Country"
-                  data-valid="false"
-                  placeholder="Country"
-                  data-ok="Country"
+                    class="multisteps-form__input form-control shadow-none"
+                    type="text"
+                    name="Country"
+                    data-valid="false"
+                    placeholder="Country"
+                    data-ok="Country"
                     id="country-code-input"
                   />
                   <small>Error message</small>
-                  <ul
-                    class="country-code-list col-12"
-                  ></ul>
+                  <ul class="country-code-list col-12"></ul>
                 </div>
               </div>
               <div
@@ -304,13 +303,13 @@
                   Number of shares
                 </label>
                 <input
-                class="multisteps-form__input form-control shadow-none"
-                type="number"
-                name="number_share"
-                data-valid="false"
-                placeholder="Number of Share"
-                id="number_share"
-                data-ok="number_share"
+                  class="multisteps-form__input form-control shadow-none"
+                  type="number"
+                  name="number_share"
+                  data-valid="false"
+                  placeholder="Number of Share"
+                  id="number_share"
+                  data-ok="number_share"
                 />
                 <small>Error message</small>
               </div>
@@ -338,7 +337,7 @@
               <div class="share_choice_container">
                 <label class="share_option_item facebook">
                   <input
-                    data-type="facebook"
+                    data-type="25"
                     type="checkbox"
                     class="share_checkbox"
                     data-value="25"
@@ -355,7 +354,7 @@
                     type="checkbox"
                     class="share_checkbox"
                     data-value="50"
-                    id = "50"
+                    id="50"
                   />
                   <div class="share_option_inner 50">
                     <div class="tickmark"></div>
@@ -368,7 +367,7 @@
                     type="checkbox"
                     class="share_checkbox"
                     data-value="75"
-                    id = "75"
+                    id="75"
                   />
                   <div class="share_option_inner 75">
                     <div class="tickmark"></div>
@@ -381,7 +380,7 @@
                     type="checkbox"
                     class="share_checkbox"
                     data-value="100"
-                    id = "100"
+                    id="100"
                   />
                   <div class="share_option_inner 100">
                     <div class="tickmark"></div>
@@ -389,7 +388,9 @@
                   </div>
                 </label>
               </div>
-              <div class="percentage-error">You have to choose a percentage</div>
+              <div class="percentage-error">
+                You have to choose a percentage
+              </div>
               <div class="share_option_value">
                 <div class="col-12 standard_input">
                   <label for="premium" class="premium_label">
@@ -438,20 +439,362 @@
           <div class="sectioncontent section3content">
             <button class="prev prev3">Prev</button>
             <button class="next next3">Next</button>
-            section3
+            <h3>For International Payments</h3>
+            <hr style="margin-bottom: 0.3rem; margin-top: 0; opacity: 0.5;" />
+            <div class="intpays_wrapper">
+              <div class="intpay_choice_container">
+                <label class="intpay_option_item abyssinia">
+                  <input
+                    data-type="abyssinia"
+                    type="checkbox"
+                    class="intpay_checkbox"
+                  />
+                  <div class="intpay_option_inner abyssinia">
+                    <div class="tickmark"></div>
+                    <img
+                      src="https://invest.purposeblacketh.com/payment-icons/bank-of-abyssinia-logo-banks-in-ethiopia.jpg"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                </label>
+                <label class="intpay_option_item dashen">
+                  <input
+                    data-type="dashen"
+                    type="checkbox"
+                    class="intpay_checkbox"
+                  />
+                  <div class="intpay_option_inner dashen">
+                    <div class="tickmark"></div>
+                    <img
+                      src="https://invest.purposeblacketh.com/payment-icons/dashin.png"
+                      alt=""
+                      srcset=""
+                    />
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div class="percentage-error2">
+              You have to choose a payment options
+            </div>
+            <div class="payment_cards_wrapper"></div>
           </div>
         </section>
         <section class="section4">
           <div class="sectioncontent section4content">
             <button class="prev prev4">Prev</button>
             <button class="next next4">Next</button>
-            section4
+            <div
+          class="available-payment col-sm-12 "
+        >
+          <div class="available-payment-methods">
+            <div class="available-payment-methods-txt">
+              Available Payment Methods
+            </div>
+            <div class="available-payment-methods-imgs">
+              <div class="available-payment-methods-img">
+                <img
+                  src="https://invest.purposeblacketh.com/payment-icons/Amole.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="available-payment-methods-img">
+                <img
+                  src="https://invest.purposeblacketh.com/payment-icons/awash.png"
+                  alt=""
+                />
+              </div>
+              <div class="available-payment-methods-img">
+                <img
+                  src="https://invest.purposeblacketh.com/payment-icons/cbe-birr.png"
+                  alt=""
+                />
+              </div>
+              <div class="available-payment-methods-img">
+                <img
+                  src="https://invest.purposeblacketh.com/payment-icons/e-birr.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="available-payment-methods-img">
+                <img
+                  src="https://invest.purposeblacketh.com/payment-icons/MasterCard_Logo_svg.png"
+                  alt=""
+                />
+              </div>
+              <div class="available-payment-methods-img">
+                <img
+                  src="https://invest.purposeblacketh.com/payment-icons/mastercard_visa.png"
+                  alt=""
+                />
+              </div>
+              <div class="available-payment-methods-img">
+                <img
+                  src="https://invest.purposeblacketh.com/payment-icons/amex.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="accordion-options">
+            <input
+              type="checkbox"
+              name="accordion"
+              class="accordion"
+              id="section1"
+            />
+            <label for="section1" class="accordion_choice">
+              <span>Remittnace & Bank</span>
+              <img src="./arrow.svg" alt="icon-arrow-down" />
+            </label>
+            <div class="accordion_content">
+              <div class="extra-info rem">
+                <p>ፐርፐዝብላክ ኢቲኤች ትሬዲንግ አክስዮን ማኅበር</p>
+                <ul>
+                  <li>
+                    CBE
+                    <ul>
+                      <li>Account :1000418006009</li>
+                      <li>Swift:CBETETAA</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Abyssinia
+                    <ul>
+                      <li>Account :70548167</li>
+                      <li>Swift : ABYSETAA</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Awash
+                    <ul>
+                      <li>Account :02307503690700</li>
+                      <li>Swift:AWINETAA</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-options">
+            <input
+              type="checkbox"
+              name="accordion"
+              class="accordion"
+              id="section2"
+            />
+            <label for="section2" class="accordion_choice">
+              <span>Local Payment</span>
+              <img src="./arrow.svg" alt="icon-arrow-down" />
+            </label>
+            <div class="accordion_content">
+              <div class="extra-info">
+                <p>ፐርፐዝብላክ ኢቲኤች ትሬዲንግ አክስዮን ማኅበር</p>
+                <ul>
+                  <li>
+                    የኢትዮጵያ ንግድ ባንክ
+                    <ul>
+                      <li>Account:1000412293747</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ቡና ባንክ
+                    <ul>
+                      <li>Account:32696001000044</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    አቢሲኒያ ባንክ
+                    <ul>
+                      <li>Account:68894034</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ህብረት ባንክ
+                    <ul>
+                      <li>Account:1771811665841022</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ዳሽን ባንክ
+                    <ul>
+                      <li>Account:0124251642011</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    አዋሽ ባንክ
+                    <ul>
+                      <li>Account:01304503690700</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    አባይ ባንክ
+                    <ul>
+                      <li>Account:1022117441614016</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ኦሮሚያ ኢንተርናሽናል ባንክ
+                    <ul>
+                      <li>Account:1437738200001</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ንብ ኢንተርናሽናል ባንክ
+                    <ul>
+                      <li>Account:7000024997818</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ዘመን ባንክ
+                    <ul>
+                      <li>Account:1094110058484018</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ኦሮሚያ ህብረት ስራ ባንክ
+                    <ul>
+                      <li>Account:1012100020407</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ወጋገን ባንክ
+                    <ul>
+                      <li>Account:0888252810101</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    አንበሳ ባንክ
+                    <ul>
+                      <li>Account:00111696864-74</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ዘምዘም ባንክ
+                    <ul>
+                      <li>Account:0000271710301</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ደቡብ ግሎባል ባንክ
+                    <ul>
+                      <li>Account:155270493081</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    ብርሃን ባንክ
+                    <ul>
+                      <li>Account:2500260104695</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    እናት ባንክ
+                    <ul>
+                      <li>Account:0011118109340002</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                  <li>
+                    አዲስ ባንክ
+                    <ul>
+                      <li>Account:285780</li>
+                      <li>Swift:</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-options">
+            <input
+              type="checkbox"
+              name="accordion"
+              class="accordion"
+              id="section3"
+            />
+            <label for="section3" class="accordion_choice">
+              <span>We Accept Payments</span>
+              <img src="./arrow.svg" alt="icon-arrow-down" />
+            </label>
+            <div class="accordion_content">
+              <div class="extra-info rem">
+                <ul>
+                  <li>Remitly</li>
+                  <li>Master Remit</li>
+                  <li>World Remit</li>
+                  <li>Western Union</li>
+                  <li>HelloPaisa</li>
+                  <li>HelloPaisa</li>
+                  <li>United Nations Federal Credit Union (UNFCN)</li>
+                  <li>Ria</li>
+                  <li>mHits</li>
+                  <li>Cassava Fintech Pty (Ltd)</li>
+                  <li>Intermex</li>
+                  <li>Mukuru</li>
+                  <li>Juba Express</li>
+                  <li>TalkRemit</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
           </div>
         </section>
         <section class="section5">
           <div class="sectioncontent section5content">
             <button class="prev prev5">Prev</button>
-            section5
+            <button class="submit">Submit</button>
+            <h3>Verify</h3>
+            <div class="vow">
+              <p>
+                1. I will pay. I will deposit the payment into the bank account
+                opened for this purpose
+              </p>
+              <p>
+                2. I will pay the balance in two years and we will complete it.
+              </p>
+              <p>
+                3. I certify with my signature that I have read the Company's
+                statement on the sale of shares and that I accept the terms,
+                conditions and that I accept the terms,conditions and
+                obligations of the sale.
+              </p>
+            </div>
+            <div class="agreement">
+              <input
+                type="checkbox"
+                name="agreement-input"
+                id="agreement-input"
+              />
+              <p>
+                I agree all terms and policy of pupose black eth trading company
+              </p>
+            </div>
+            <div class="user-guide">
+              <p>User Guide On payment</p>
+              <a
+                href="https://invest.purposeblacketh.com/Welcome%20to%20our%20purpose%20black%20ETH%20stock%20share%20form.pdf"
+              >
+                Download Here
+              </a>
+            </div>
           </div>
         </section>
       </div>

@@ -1,0 +1,101 @@
+.available-payment {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .available-payment-methods {
+    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0;
+    padding: 12px;
+    /* background-color: blue; */
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%),
+      0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    /* padding: 2rem 4rem !important; */
+  }
+  .available-payment-methods-img > img {
+    /* width: 71px; */
+    height: 48px;
+    gap: 0.5rem;
+  }
+  .available-payment-methods-img {
+    width: 65px;
+    height: 50px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+  }
+  .available-payment-methods-imgs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .available-payment-methods-txt {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.0125em;
+    line-height: 2rem;
+    word-break: break-all;
+    padding: 16px;
+  }
+  /* accordion */
+  .accordion-options {
+    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 12px;
+    margin-top: 0;
+    padding: 12px;
+    /* background-color: blue; */
+    box-shadow: 1px 3px 1px -2px rgb(0 0 0 / 20%),
+      0px -1px 2px 0px rgb(0 0 0 / 14%), 1px 1px 5px 0px rgb(0 0 0 / 12%);
+    padding: 0.8rem 1rem !important;
+    margin: 0.6rem 0;
+  }
+  .accordion_choice {
+    font-size: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .accordion_choice > img {
+    width: 10px;
+  }
+  .accordion_choice span {
+    font-size: 15px;
+  }
+  .extra-info p {
+    padding-top: 10px;
+  }
+  .extra-info ul {
+    font-weight: 600;
+  }
+  .accordion_content {
+    display: none;
+  }
+  .accordion {
+    display: none;
+  }
+  .accordion:checked ~ .accordion_content {
+    transition: 0.3s;
+    display: block;
+    font-size: 15px;
+  }
+  .accordion:checked ~ label {
+    padding-bottom: 15px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .accordion:checked ~ label {
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .accordion:checked ~ label > img {
+    transform: rotateX(180deg);
+  }

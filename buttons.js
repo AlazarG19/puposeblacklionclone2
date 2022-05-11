@@ -15,6 +15,35 @@ const checkexists = () => {
   })
   return a
 }
+const checkexists2 = () => {
+  let a = false
+  checkbox2.forEach((check) => {
+    if (check.checked) {
+      a = true
+    }
+  })
+  return a
+}
+const checkexists3 = () => {
+  let checkbox3 = document.querySelectorAll('.abyssinia_choice_checkbox')
+  let a = false
+  checkbox3.forEach((check) => {
+    if (check.checked) {
+      a = true
+    }
+  })
+  return a
+}
+const checkexists5 = () => {
+  let a = false
+  let checkbox5 = document.querySelectorAll('.dashen_choice_checkbox')
+  checkbox5.forEach((check) => {
+    if (check.checked) {
+      a = true
+    }
+  })
+  return a
+}
 const uncheckall1 = (type) => {
   checkbox.forEach((check) => {
     if (type === check.dataset.type) {
@@ -38,6 +67,212 @@ checkbox.forEach((check) => {
   // console.log()
 })
 uncheckall1()
+let checkbox2 = document.querySelectorAll('.intpay_checkbox')
+const uncheckall2 = (type) => {
+  checkbox2.forEach((check) => {
+    if (type === check.dataset.type) {
+    } else {
+      // console.log(check.dataset.type)
+      check.checked = false
+    }
+  })
+}
+const whichcheck1 = () => {
+  let checkbox = document.querySelectorAll('.share_checkbox')
+  let a
+  checkbox.forEach((check) => {
+    if (check.checked) {
+      a = check.dataset.value
+    }
+  })
+  return a
+}
+const whichcheck2 = () => {
+  let checkbox2 = document.querySelectorAll('.intpay_checkbox')
+  // return "yes"
+  let a
+  checkbox2.forEach((check) => {
+    if (check.checked) {
+      a = check.dataset.type
+    }
+  })
+  return a
+}
+const whichcheck3 = () => {
+  let checkbox3 = document.querySelectorAll('.abyssinia_choice_checkbox')
+  // return "yes"
+  let a
+  checkbox3.forEach((check) => {
+    if (check.checked) {
+      a = check.dataset.type
+    }
+  })
+  return a
+}
+const whichcheck5 = () => {
+  let checkbox5 = document.querySelectorAll('.dashen_choice_checkbox')
+  // return "yes"
+  let a
+  checkbox5.forEach((check) => {
+    if (check.checked) {
+      a = check.dataset.type
+    }
+  })
+  return a
+}
+// uncheckall()
+checkbox2.forEach((check) => {
+  check.addEventListener('change', () => {
+    uncheckall2(check.dataset.type)
+    document.querySelector('.percentage-error2').style.display = 'none'
+
+    let box = document.querySelector('.payment_cards_wrapper')
+    if (check.dataset.type == 'abyssinia') {
+      box.innerHTML = `
+      <h3>Available Payment cards</h3>
+      <hr style="margin-bottom: 0.3rem; margin-top: 0; opacity: 0.5;" />
+
+      <div class="abyssinia_choice_container">
+      <label class="abyssinia_choice_option_item MasterCard">
+        <input
+          data-type="MasterCard"
+          type="checkbox"
+          class="abyssinia_choice_checkbox"
+        />
+        <div class="abyssinia_choice_option_inner MasterCard">
+          <div class="tickmark"></div>
+          <img
+            src="https://invest.purposeblacketh.com/payment-icons/MasterCard_Logo_svg.png"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </label>
+      <label class="abyssinia_choice_option_item">
+        <input
+          data-type="Visa"
+          type="checkbox"
+          class="abyssinia_choice_checkbox"
+          checked
+        />
+        <div class="abyssinia_choice_option_inner Visa">
+          <div class="tickmark"></div>
+          <img
+            src="https://s2.svgbox.net/payments.svg?ic=visa-2"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </label>
+    </div>
+    <div class="percentage-error3">
+              You have to choose a payment options
+            </div>
+    `
+      let checkbox3 = document.querySelectorAll('.abyssinia_choice_checkbox')
+      console.log('checkbox3', checkbox3)
+      const uncheckall3 = (type) => {
+        checkbox3.forEach((check) => {
+          if (type === check.dataset.type) {
+          } else {
+            console.log(check.dataset.type)
+            check.checked = false
+          }
+        })
+      }
+      // uncheckall()
+      checkbox3.forEach((check) => {
+        check.addEventListener('change', () => {
+          uncheckall3(check.dataset.type)
+          document.querySelector('.percentage-error3').style.display = 'none'
+        })
+        // console.log()
+      })
+      uncheckall3()
+    }
+    if (check.dataset.type == 'dashen') {
+      box.innerHTML = `
+      <h3>Available Payment cards</h3>
+
+      <hr style="margin-bottom: 0.3rem; margin-top: 0; opacity: 0.5;" />
+
+      <div class="dashen_choice_container">
+      <label class="dashen_choice_option_item MasterCard">
+        <input
+          data-type="MasterCard"
+          type="checkbox"
+          class="dashen_choice_checkbox"
+        />
+        <div class="dashen_choice_option_inner MasterCard">
+          <div class="tickmark"></div>
+          <img
+            src="https://invest.purposeblacketh.com/payment-icons/MasterCard_Logo_svg.png"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </label>
+      <label class="dashen_choice_option_item">
+        <input
+          data-type="AmericanExpress"
+          type="checkbox"
+          class="dashen_choice_checkbox"
+          checked
+        />
+        <div class="dashen_choice_option_inner AmericanExpress">
+          <div class="tickmark"></div>
+          <img
+            src="https://invest.purposeblacketh.com/payment-icons/amex.png"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </label>
+      <label class="dashen_choice_option_item">
+        <input
+          data-type="Visa"
+          type="checkbox"
+          class="dashen_choice_checkbox"
+          checked
+        />
+        <div class="dashen_choice_option_inner Visa">
+          <div class="tickmark"></div>
+          <img
+            src="https://s2.svgbox.net/payments.svg?ic=visa-2"
+            alt=""
+            srcset=""
+          />
+        </div>
+      </label>
+    </div>
+    <div class="percentage-error5">
+              You have to choose a payment options
+            </div>`
+      let checkbox5 = document.querySelectorAll('.dashen_choice_checkbox')
+      console.log('checkbox5', checkbox5)
+      const uncheckall5 = (type) => {
+        checkbox5.forEach((check) => {
+          if (type === check.dataset.type) {
+          } else {
+            check.checked = false
+          }
+        })
+      }
+      // uncheckall()
+      checkbox5.forEach((check) => {
+        check.addEventListener('change', () => {
+          document.querySelector('.percentage-error5').style.display = 'none'
+          uncheckall5(check.dataset.type)
+          console.log('this5')
+        })
+        // console.log()
+      })
+      uncheckall5()
+    }
+  })
+  // console.log()
+})
+uncheckall2()
 let sharesWrapper = document.querySelector('.shares_wrapper')
 $(document).ready(function () {
   $('#number_share').on('input', function (evt) {
@@ -189,13 +424,11 @@ function setErrorFor2(input, message) {
     formControl.className =
       'col-12 col-lg-3 col-md-6 col-sm-6 form-control2 error street-col'
     small.innerText = message
-  } else if(input.id === "country-code-input"){
+  } else if (input.id === 'country-code-input') {
     const small = formControl.querySelector('small')
-    formControl.className =
-      'col-12 form-control2 error'
+    formControl.className = 'col-12 form-control2 error country-code-container'
     small.innerText = message
-  }
-  else {
+  } else {
     const small = formControl.querySelector('small')
     formControl.className =
       'col-12 col-lg-3 col-md-6 col-sm-6 form-control2 error'
@@ -205,11 +438,11 @@ function setErrorFor2(input, message) {
 }
 function setSuccessFor2(input) {
   input.dataset.valid = 'true'
-  if(input.id === "country-code-input"){
+  if (input.id === 'country-code-input') {
     const formControl = input.parentElement
     formControl.className =
-      'col-12 form-control2 success'
-  }else{
+      'col-12 form-control2 success country-code-container'
+  } else {
     const formControl = input.parentElement
     formControl.className =
       'col-12 col-lg-3 col-md-6 col-sm-6 form-control2 success'
@@ -228,11 +461,11 @@ for (let i = 1; i < 5; i++) {
       // form validation button
       checkInputs()
       if(Validated()){
+      // if (true) {
         document.querySelector(`.blue-line`).style.width = `${17 * i}vw`
         document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
         document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
         for (let j = i; j < 5; j++) {
-          console.log('j', j)
           document.querySelector(
             `.section${j}`,
           ).style.transform = `translate(-${i}00vw)`
@@ -267,37 +500,104 @@ for (let i = 1; i < 5; i++) {
       if (
         checkexists() &&
         !(document.querySelector('#number_share').value.trim() == '')
-      ) {
+      ){
+      // if (true) {
         document.querySelector(`.blue-line`).style.width = `${17 * i}vw`
         document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
         document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
-        for (let j = i; j <= 5; j++) {
+        for (let j = i; j < 5; j++) {
           console.log('j', j)
           document.querySelector(
-            `.section${j}`,
+            `.section${j}`
           ).style.transform = `translate(-${i}00vw)`
           document.querySelector(
-            `.section${j}`,
+            `.section${j}`
           ).style.WebkitTransform = `translate(-${i}00vw)`
           document.querySelector(
-            `.section${j}`,
+            `.section${j}`
           ).style.msTransform = `translate(-${i}00vw)`
+          console.log(`.section${j + 1}`)
           document.querySelector(
-            `.section${j + 1}`,
+            `.section${j + 1}`
           ).style.transform = `translate(-${i}00vw)`
           document.querySelector(
-            `.section${j + 1}`,
+            `.section${j + 1}`
           ).style.WebkitTransform = `translate(-${i}00vw)`
           document.querySelector(
-            `.section${j + 1}`,
+            `.section${j + 1}`
           ).style.msTransform = `translate(-${i}00vw)`
+        }
+      }
+    } else if (i === 3) {
+      console.log(checkexists2)
+      if (!checkexists2()) {
+        document.querySelector('.percentage-error2').style.display = 'block'
+      } else {
+        if (whichcheck2() == 'abyssinia') {
+          if (!checkexists3()) {
+            document.querySelector('.percentage-error3').style.display = 'block'
+          } else {
+            document.querySelector(`.blue-line`).style.width = `${17 * i}vw`
+            document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
+            document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
+            for (let j = i; j < 5; j++) {
+              console.log('j', j)
+              document.querySelector(
+                `.section${j}`,
+              ).style.transform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j}`,
+              ).style.WebkitTransform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j}`,
+              ).style.msTransform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j + 1}`,
+              ).style.transform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j + 1}`,
+              ).style.WebkitTransform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j + 1}`,
+              ).style.msTransform = `translate(-${i}00vw)`
+            }
+          }
+        } else if (whichcheck2() == 'dashen') {
+          if (!checkexists5()) {
+            document.querySelector('.percentage-error5').style.display = 'block'
+          } else {
+            document.querySelector(`.blue-line`).style.width = `${17 * i}vw`
+            document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
+            document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
+            for (let j = i; j < 5; j++) {
+              console.log('j', j)
+              document.querySelector(
+                `.section${j}`,
+              ).style.transform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j}`,
+              ).style.WebkitTransform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j}`,
+              ).style.msTransform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j + 1}`,
+              ).style.transform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j + 1}`,
+              ).style.WebkitTransform = `translate(-${i}00vw)`
+              document.querySelector(
+                `.section${j + 1}`,
+              ).style.msTransform = `translate(-${i}00vw)`
+            }
+          }
         }
       }
     } else {
       document.querySelector(`.blue-line`).style.width = `${17 * i}vw`
       document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
       document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
-      for (let j = i; j <= 5; j++) {
+      for (let j = i; j < 5; j++) {
         console.log('j', j)
         document.querySelector(
           `.section${j}`,
@@ -350,4 +650,51 @@ for (let i = 2; i <= 5; i++) {
       }
     }
   }
+}
+// submit btn functionality
+let NumberOfShares = document.querySelector("#number_share")
+let ShareAmount1 = document.querySelector("#initial_share")
+const submit = document.querySelector(".submit")
+console.log(ShareAmount1.value)
+submit.onclick = () =>{
+  let a = whichcheck2()
+  let b;
+  if(a === "abyssinia"){
+    b = whichcheck3()
+  }else if (a === "dashen"){
+    b = whichcheck5()
+  }
+  console.log(a)
+  console.log(b)
+  const formdata = {
+    FirstName : FirstName.value,
+    MiddleName:MiddleName.value,
+    LastName:LastName.value,
+    PhoneNumber:PhoneNumber.value,
+    HouseNumber:HouseNumber.value,
+    Country:Country.value,
+    StreetAddress:StreetAddress.value,
+    State:State.value,
+    City:City.value,
+    ZipCode:ZipCode.value,
+    Nationality:Nationality.value,
+    Email:Email.value,
+    NumberOfShares:NumberOfShares.value,
+    ShareAmount1:ShareAmount1.placeholder,
+    PaymentPercentage:whichcheck1(),
+    Premium : parseInt(NumberOfShares.value) *5,
+    ShareAmount2:parseInt(NumberOfShares.value) * parseInt(whichcheck1()),
+    totalPrice:parseInt(NumberOfShares.value) * parseInt(whichcheck1()) +(parseInt(NumberOfShares.value) *5),
+    InternationalPayment : a,
+    AvailablePayment: b
+  }
+  console.log(formdata)
+  const api = axios.create({baseURL: 'http://example.com'})
+api.post('/user/12345', formdata)
+.then(res => {
+     console.log(res)
+})
+.catch(error => {
+     console.log(error)
+})
 }
