@@ -1,0 +1,167 @@
+/* shares choice  */
+.share_choice_container,
+.intpay_choice_container,
+.payment_card_choice_container,
+.abyssinia_choice_container,
+.abyssinia_choice_container,
+.dashen_choice_container,
+.dashen_choice_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.share_choice_container .share_option_item,
+.intpay_choice_container .intpay_option_item,
+.payment_card_choice_container .payment_card_option_item,
+.abyssinia_choice_container .abyssinia_choice_option_item,
+.dashen_choice_container .dashen_choice_option_item {
+  display: block;
+  position: relative;
+  margin: 10px;
+}
+.abyssinia_choice_container .abyssinia_choice_option_item,
+.dashen_choice_container .dashen_choice_option_item {
+  margin-top: 0;
+}
+.share_choice_container .share_option_item .share_checkbox,
+.intpay_choice_container .intpay_option_item .intpay_checkbox,
+.payment_card_choice_container .payment_card_option_item .payment_card_checkbox,
+.abyssinia_choice_container
+  .abyssinia_choice_option_item
+  .abyssinia_choice_checkbox,
+.dashen_choice_container .dashen_choice_option_item .dashen_choice_checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.share_option_item .share_option_inner,
+.intpay_option_item .intpay_option_inner,
+.payment_card_option_item .payment_card_option_inner,
+.abyssinia_choice_option_item .abyssinia_choice_option_inner,
+.dashen_choice_option_item .dashen_choice_option_inner {
+  width: 120px;
+  height: 60px;
+  background: #fff;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  color: #585c68;
+  display: flex;
+  border: 1px solid #ccc;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .share_option_item .share_option_inner .icon,.intpay_option_item .intpay_option_inner .icon ,.payment_card_option_item .payment_card_option_inner {
+  margin-bottom: 10px;
+} */
+
+/* .share_option_item .share_option_inner .icon .fab,.intpay_option_item .intpay_option_inner .icon .fab ,.payment_card_option_item .payment_card_option_inner{
+  font-size: 32px;
+} */
+
+.share_option_item .share_option_inner .share_number,
+.intpay_option_item .intpay_option_inner .intpay_number,
+.payment_card_option_item .payment_card_option_inner .payment_card_number,
+.abyssinia_choice_option_item
+  .abyssinia_choice_option_inner
+  .abyssinia_choice_number,
+.dashen_choice_option_item .dashen_choice_option_inner .dashen_choice_number {
+  user-select: none;
+}
+
+.share_option_item .share_checkbox:checked ~ .share_option_inner,
+.intpay_option_item .intpay_checkbox:checked ~ .intpay_option_inner,
+.payment_card_option_item
+  .payment_card_checkbox:checked
+  ~ .payment_card_option_inner,
+.abyssinia_choice_option_item
+  .abyssinia_choice_checkbox:checked
+  ~ .abyssinia_choice_option_inner,
+.dashen_choice_option_item
+  .dashen_choice_checkbox:checked
+  ~ .dashen_choice_option_inner {
+  background: rgba(64, 224, 208, 0.2);
+}
+
+.share_option_item .share_option_inner .tickmark,
+.intpay_option_item .intpay_option_inner .tickmark,
+.payment_card_option_item .payment_card_option_inner .tickmark,
+.abyssinia_choice_option_item .abyssinia_choice_option_inner .tickmark,
+.dashen_choice_option_item .dashen_choice_option_inner .tickmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-color: #000 transparent transparent #000;
+  display: none;
+}
+
+.share_option_item .share_option_inner .tickmark:before,
+.intpay_option_item .intpay_option_inner .tickmark:before,
+.payment_card_option_item .payment_card_option_inner .tickmark:before,
+.abyssinia_choice_option_item .abyssinia_choice_option_inner .tickmark:before,
+.dashen_choice_option_item .dashen_choice_option_inner .tickmark:before {
+  content: "✓";
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background: turquoise;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+}
+.share_option_inner > img,
+.intpay_option_inner > img,
+.payment_card_option_inner > img,
+.abyssinia_choice_option_inner > img,
+.dashen_choice_option_inner > img {
+  padding-top: 0.5px;
+  height: 58px;
+}
+.share_option_item .share_checkbox:checked ~ .share_option_inner .tickmark,
+.intpay_option_item .intpay_checkbox:checked ~ .intpay_option_inner .tickmark,
+.payment_card_option_item
+  .payment_card_checkbox:checked
+  ~ .payment_card_option_inner
+  .tickmark,
+.abyssinia_choice_option_item
+  .abyssinia_choice_checkbox:checked
+  ~ .abyssinia_choice_option_inner
+  .tickmark,
+.dashen_choice_option_item
+  .dashen_choice_checkbox:checked
+  ~ .dashen_choice_option_inner
+  .tickmark {
+  display: block;
+}
+
+.share_option_item .share_option_inner .tickmark,
+.intpay_option_item .intpay_option_inner .tickmark,
+.payment_card_option_item .payment_card_option_inner .tickmark,
+.abyssinia_choice_option_item .abyssinia_choice_option_inner .tickmark,
+.dashen_choice_option_item .dashen_choice_option_inner .tickmark {
+  border-color: #3b5999 transparent transparent #3b5999;
+}
+.intpay_option_inner {
+  overflow: none;
+}
+.shares_wrapper {
+  display: none;
+}
+.share_option_value {
+  display: none;
+}
+.percentage-error,.share-error{
+    display: none;
+    color: red;
+}

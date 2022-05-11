@@ -1,3 +1,68 @@
+// 2nd page js
+// js for the shares checkboxes
+let shares_value = document.querySelector('.share_option_value')
+let checkbox = document.querySelectorAll('.share_checkbox')
+let totalPrice = document.querySelector('#total_price')
+let sharesAmount = document.querySelector('#share_amount')
+let numberShare = document.querySelector('#number_share')
+let premium = document.querySelector('#premium')
+const checkexists = () => {
+  let a = false
+  checkbox.forEach((check) => {
+    if (check.checked) {
+      a = true
+    }
+  })
+  return a
+}
+const uncheckall1 = (type) => {
+  checkbox.forEach((check) => {
+    if (type === check.dataset.type) {
+    } else {
+      // console.log(check.dataset.type)
+      check.checked = false
+    }
+  })
+}
+// uncheckall()
+checkbox.forEach((check) => {
+  check.addEventListener('change', () => {
+    premium.placeholder = 5 * parseInt(numberShare.value)
+    sharesAmount.placeholder = check.dataset.value * parseInt(numberShare.value)
+    totalPrice.placeholder =
+      check.dataset.value * parseInt(numberShare.value) +
+      5 * parseInt(numberShare.value)
+    shares_value.style.display = 'block'
+    uncheckall1(check.dataset.type)
+  })
+  // console.log()
+})
+uncheckall1()
+let sharesWrapper = document.querySelector('.shares_wrapper')
+$(document).ready(function () {
+  $('#number_share').on('input', function (evt) {
+    // Print entered value in a div box
+    // console.log()
+    if (this.value.length > 0) {
+      document.querySelector('#initial_share').placeholder =
+        evt.target.value * 100
+      sharesWrapper.style.display = 'block'
+      checkbox.forEach((check) => {
+        if (check.checked) {
+          premium.placeholder = 5 * parseInt(numberShare.value)
+          sharesAmount.placeholder =
+            check.dataset.value * parseInt(numberShare.value)
+          totalPrice.placeholder =
+            check.dataset.value * parseInt(numberShare.value) +
+            5 * parseInt(numberShare.value)
+        }
+      })
+    } else {
+      sharesWrapper.style.display = 'none'
+    }
+  })
+})
+// end of second page js
 const FirstName = document.getElementById('FirstName')
 const MiddleName = document.getElementById('MiddleName')
 const LastName = document.getElementById('LastName')
@@ -82,7 +147,8 @@ function checkInputs() {
   }
 }
 function Validated() {
-  return(FirstName.dataset.valid === 'true' &&
+  return (
+    FirstName.dataset.valid === 'true' &&
     MiddleName.dataset.valid === 'true' &&
     LastName.dataset.valid === 'true' &&
     PhoneNumber.dataset.valid === 'true' &&
@@ -92,7 +158,8 @@ function Validated() {
     City.dataset.valid === 'true' &&
     ZipCode.dataset.valid === 'true' &&
     Email.dataset.valid === 'true' &&
-    Nationality.dataset.valid === 'true')
+    Nationality.dataset.valid === 'true'
+  )
 }
 function setErrorFor(input, message) {
   const formControl = input.parentElement
@@ -142,6 +209,46 @@ for (let i = 1; i < 5; i++) {
       // form validation button
       checkInputs()
       if(Validated()){
+        document.querySelector(`.blue-line`).style.width = `${17 * i}vw`
+        document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
+        document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
+        for (let j = i; j < 5; j++) {
+          console.log('j', j)
+          document.querySelector(
+            `.section${j}`,
+          ).style.transform = `translate(-${i}00vw)`
+          document.querySelector(
+            `.section${j}`,
+          ).style.WebkitTransform = `translate(-${i}00vw)`
+          document.querySelector(
+            `.section${j}`,
+          ).style.msTransform = `translate(-${i}00vw)`
+          document.querySelector(
+            `.section${j + 1}`,
+          ).style.transform = `translate(-${i}00vw)`
+          document.querySelector(
+            `.section${j + 1}`,
+          ).style.WebkitTransform = `translate(-${i}00vw)`
+          document.querySelector(
+            `.section${j + 1}`,
+          ).style.msTransform = `translate(-${i}00vw)`
+        }
+      }
+    } else if (i === 2) {
+      if (document.querySelector('#number_share').value.trim() == '') {
+        document.querySelector('.share-error').style.display = 'block'
+      } else {
+        document.querySelector('.share-error').style.display = 'none'
+      }
+      if (!checkexists()) {
+        document.querySelector('.percentage-error').style.display = 'block'
+      } else {
+        document.querySelector('.percentage-error').style.display = 'none'
+      }
+      if (
+        checkexists() &&
+        !(document.querySelector('#number_share').value.trim() == '')
+      ) {
         document.querySelector(`.blue-line`).style.width = `${17 * i}vw`
         document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
         document.querySelector(`.txt${i + 1}`).style.color = '#007afd'

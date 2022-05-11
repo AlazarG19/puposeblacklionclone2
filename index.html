@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="referal.css" />
     <link rel="stylesheet" href="formvalidation.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="share.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -187,7 +188,9 @@
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
-              <div class="col-12 col-lg-3 col-md-6 col-sm-6 form-control2 street-col">
+              <div
+                class="col-12 col-lg-3 col-md-6 col-sm-6 form-control2 street-col"
+              >
                 <label for="streetaddress">Street Address</label>
                 <input
                   class="multisteps-form__input form-control shadow-none"
@@ -202,7 +205,9 @@
                 <i class="fas fa-exclamation-circle"></i>
                 <small>Error message</small>
               </div>
-              <div class="col-12 col-lg-3 col-md-6 col-sm-6 form-control2 state-col">
+              <div
+                class="col-12 col-lg-3 col-md-6 col-sm-6 form-control2 state-col"
+              >
                 <label for="State">State</label>
                 <input
                   class="multisteps-form__input form-control shadow-none"
@@ -219,55 +224,55 @@
               </div>
             </div>
             <div class="row form-row">
-                <div class="col-12 col-sm-6 form-control2 ">
-                    <label for="City">City</label>
-                    <input
-                      class="multisteps-form__input form-control shadow-none"
-                      type="text"
-                      name="City"
-                      data-valid="false"
-                      placeholder="City"
-                      id="City"
-                      data-ok="City"
-                    />
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>Error message</small>
-                  </div>
+              <div class="col-12 col-sm-6 form-control2">
+                <label for="City">City</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="City"
+                  data-valid="false"
+                  placeholder="City"
+                  id="City"
+                  data-ok="City"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
 
-                  <div class="col-12 col-sm-6 form-control2 ">
-                    <label for="ZipCode">ZipCode</label>
-                    <input
-                      class="multisteps-form__input form-control shadow-none"
-                      type="text"
-                      name="ZipCode"
-                      data-valid="false"
-                      placeholder="ZipCode"
-                      id="ZipCode"
-                      data-ok="ZipCode"
-                    />
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>Error message</small>
-                  </div>
+              <div class="col-12 col-sm-6 form-control2">
+                <label for="ZipCode">ZipCode</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="ZipCode"
+                  data-valid="false"
+                  placeholder="ZipCode"
+                  id="ZipCode"
+                  data-ok="ZipCode"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
             </div>
             <div class="row form-row">
-                <div class="col-12 col-sm-6 form-control2 ">
-                    <label for="Nationality">Nationality</label>
-                    <input
-                      class="multisteps-form__input form-control shadow-none"
-                      type="text"
-                      name="Nationality"
-                      data-valid="false"
-                      placeholder="Nationality"
-                      id="Nationality"
-                      data-ok="Nationality"
-                    />
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>Error message</small>
-                  </div>
-              <div class="col-12 col-sm-6 form-control2 ">
+              <div class="col-12 col-sm-6 form-control2">
+                <label for="Nationality">Nationality</label>
+                <input
+                  class="multisteps-form__input form-control shadow-none"
+                  type="text"
+                  name="Nationality"
+                  data-valid="false"
+                  placeholder="Nationality"
+                  id="Nationality"
+                  data-ok="Nationality"
+                />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+              <div class="col-12 col-sm-6 form-control2">
                 <label for="Email">Email</label>
                 <input
                   class="multisteps-form__input form-control shadow-none"
@@ -289,7 +294,140 @@
           <div class="sectioncontent section2content">
             <button class="prev prev2">Prev</button>
             <button class="next next2">Next</button>
-            section2
+            <div class="row form-row form-control2">
+              <div class="col-12 col-sm-6 form-control2">
+                <label for="number_share" class="number_share_label">
+                  Number of shares
+                </label>
+                <input
+                class="multisteps-form__input form-control shadow-none"
+                type="number"
+                name="number_share"
+                data-valid="false"
+                placeholder="Number of Share"
+                id="number_share"
+                data-ok="number_share"
+                />
+                <small>Error message</small>
+              </div>
+              <div class="col-12 col-sm-6 form-control2">
+                <label for="initial_share" class="initial_share_label">
+                  Share Amount
+                </label>
+                <input
+                  name="initial_share"
+                  data-valid="false"
+                  placeholder="Share Amount"
+                  id="initial_share"
+                  data-ok="initial_share"
+                  class="multisteps-form__input form-control shadow-none"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="share-error">Number of Shares can not be empty.</div>
+
+            <div class="shares_wrapper">
+              <div class="col-12">
+                <h3>Choose payment Percentage</h3>
+              </div>
+              <div class="share_choice_container">
+                <label class="share_option_item facebook">
+                  <input
+                    data-type="facebook"
+                    type="checkbox"
+                    class="share_checkbox"
+                    data-value="25"
+                    id="25"
+                  />
+                  <div class="share_option_inner facebook">
+                    <div class="tickmark"></div>
+                    <div class="share_number">25%</div>
+                  </div>
+                </label>
+                <label class="share_option_item">
+                  <input
+                    data-type="50"
+                    type="checkbox"
+                    class="share_checkbox"
+                    data-value="50"
+                    id = "50"
+                  />
+                  <div class="share_option_inner 50">
+                    <div class="tickmark"></div>
+                    <div class="share_number">50%</div>
+                  </div>
+                </label>
+                <label class="share_option_item">
+                  <input
+                    data-type="75"
+                    type="checkbox"
+                    class="share_checkbox"
+                    data-value="75"
+                    id = "75"
+                  />
+                  <div class="share_option_inner 75">
+                    <div class="tickmark"></div>
+                    <div class="share_number">75%</div>
+                  </div>
+                </label>
+                <label class="share_option_item">
+                  <input
+                    data-type="100"
+                    type="checkbox"
+                    class="share_checkbox"
+                    data-value="100"
+                    id = "100"
+                  />
+                  <div class="share_option_inner 100">
+                    <div class="tickmark"></div>
+                    <div class="share_number">100%</div>
+                  </div>
+                </label>
+              </div>
+              <div class="percentage-error">You have to choose a percentage</div>
+              <div class="share_option_value">
+                <div class="col-12 standard_input">
+                  <label for="premium" class="premium_label">
+                    premium
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="premium"
+                    id="premium"
+                    placeholder="5"
+                    disabled
+                  />
+                </div>
+                <div class="col-12 standard_input">
+                  <label for="share_amount" class="share_amount_label">
+                    Share amount
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="share_amount"
+                    id="share_amount"
+                    placeholder="10"
+                    disabled
+                  />
+                </div>
+                <div class="col-12 standard_input">
+                  <label for="total_price" class="total_price_label">
+                    total_price
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="total_price"
+                    id="total_price"
+                    placeholder="10"
+                    disabled
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section class="section3">
@@ -330,6 +468,7 @@
     ></script>
     <script src="referal.js"></script>
     <script src="buttons.js"></script>
+    <script src="share.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
