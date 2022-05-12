@@ -712,6 +712,8 @@ submit.onclick = () =>{
   let agreementBox = document.querySelector("#agreement-input")
   console.log(agreementBox.checked)
   if(agreementBox.checked){
+    let err = document.querySelector(".error-message-agree")
+    err.style.display = "none" 
     let a = whichcheck2()
     let b;
     if(a === "abyssinia"){
@@ -735,7 +737,7 @@ submit.onclick = () =>{
       Nationality:Nationality.value,
       Email:Email.value,
       NumberOfShares:NumberOfShares.value,
-      ShareAmount1:ShareAmount1.placeholder,
+      ShareAmount1:parseInt(NumberOfShares.value)*100,
       PaymentPercentage:whichcheck1(),
       Premium : parseInt(NumberOfShares.value) *5,
       ShareAmount2:parseInt(NumberOfShares.value) * parseInt(whichcheck1()),
@@ -746,6 +748,7 @@ submit.onclick = () =>{
       referalNameValue : referalNameValue()
     }
     console.log(formdata)
+    alert("data successfully sent check console for details")
   //   const api = axios.create({baseURL: 'http://example.com'})
   // api.post('/user/12345', formdata)
   // .then(res => {
@@ -755,6 +758,7 @@ submit.onclick = () =>{
   //      console.log(error)
   // })
   }else{
-    console.log("please check the uncehck box")
+    let err = document.querySelector(".error-message-agree")
+    err.style.display = "block" 
   }
 }

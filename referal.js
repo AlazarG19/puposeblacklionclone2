@@ -78,7 +78,7 @@ toggle.addEventListener('change', (event) => {
     </div>
   </div>`
     let input = document.getElementById('referal-name-input')
-    console.log(input, 'input')
+    //console.log(input, 'input')
     input.addEventListener('keyup', (e) => {
       fetch('https://apiforsample.herokuapp.com/referal')
         .then((response) => response.json())
@@ -95,7 +95,7 @@ toggle.addEventListener('change', (event) => {
               i.code.toLowerCase().startsWith(input.value.toLowerCase()) &&
               input.value != ''
             ) {
-              console.log(i.code)
+              //console.log(i.code)
               let listItem = document.createElement('li')
               listItem.setAttribute('id', i.code)
               listItem.classList.add('referal-list-items')
@@ -107,8 +107,8 @@ toggle.addEventListener('change', (event) => {
             }
           }
           $(document).click(function (evt) {
-            console.log(referal2keys, evt.target.id)
-            console.log('id of target', referal2keys.indexOf(evt.target.id))
+            //console.log(referal2keys, evt.target.id)
+            //console.log('id of target', referal2keys.indexOf(evt.target.id))
             if (referal2keys.indexOf(evt.target.id) != -1) {
               display(
                 evt.target.id,
@@ -209,7 +209,7 @@ toggle.addEventListener('change', (event) => {
     </div>
   </div>`
     let inputCode = document.getElementById('referal-code-input')
-    console.log(inputCode, 'input')
+    //console.log(inputCode, 'input')
     // console.log(input)
     //Execute function on keyup
     inputCode.addEventListener('keyup', (e) => {
@@ -226,7 +226,7 @@ toggle.addEventListener('change', (event) => {
             countrieskeys.push(i.name)
           }
           removeElementsCode()
-          console.log(countries)
+          //console.log(countries)
           for (let i of countries) {
             //convert inputCode to lowercase and compare with each string
             // console.log(i.name)
@@ -252,9 +252,9 @@ toggle.addEventListener('change', (event) => {
           }
 
           $(document).click(function (evt) {
-            // console.log(document.querySelector('.referal-code-list'))
-            console.log(countrieskeys, evt.target.id)
-            console.log('id of target', countrieskeys.indexOf(evt.target.id))
+            // //console.log(document.querySelector('.referal-code-list'))
+            //console.log(countrieskeys, evt.target.id)
+            //console.log('id of target', countrieskeys.indexOf(evt.target.id))
             if (countrieskeys.indexOf(evt.target.id) != -1) {
               displayCode(
                 evt.target.id,
@@ -341,7 +341,7 @@ toggle.addEventListener('change', (event) => {
 
 //reference
 let inputCode = document.getElementById('referal-code-input')
-console.log(inputCode, 'input')
+//console.log(inputCode, 'input')
 
 inputCode.addEventListener('keyup', (e) => {
   // console.log(sortedNames)
@@ -357,10 +357,10 @@ inputCode.addEventListener('keyup', (e) => {
         countrieskeys.push(i.name)
       }
       removeElementsCode()
-      console.log('started')
-      console.log('')
+      //console.log('started')
+      //console.log('')
       document.querySelector('.referal-code-list').style.display = 'block'
-      console.log(countries)
+      //console.log(countries)
       for (let i of countries) {
         //convert inputCode to lowercase and compare with each string
         // console.log(i.name)
@@ -386,8 +386,8 @@ inputCode.addEventListener('keyup', (e) => {
       }
       $(document).click(function (evt) {
         // console.log(document.querySelector('.referal-code-list'))
-        console.log(countrieskeys, evt.target.id)
-        console.log('id of target', countrieskeys.indexOf(evt.target.id))
+        //console.log(countrieskeys, evt.target.id)
+        //console.log('id of target', countrieskeys.indexOf(evt.target.id))
         if (countrieskeys.indexOf(evt.target.id) != -1) {
           displayCode(
             evt.target.id,
@@ -469,7 +469,7 @@ function displayCountry(value, key) {
   inputCountry.value = value
   document.querySelector('#country-code-input').placeholder = key
   removeElementsCountry()
-  console.log('display country called')
+  //console.log('display country called')
 }
 function removeElementsCountry() {
   //clear all the item
@@ -482,7 +482,7 @@ inputCountry.addEventListener('keyup', (e) => {
   // console.log(sortedNames)
   //loop through above array
   // Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
-  console.log('input country touced')
+  //console.log('input country touced')
   fetch('https://apiforsample.herokuapp.com/countries')
     .then((response) => response.json())
     .then((data) => {
@@ -514,9 +514,9 @@ inputCountry.addEventListener('keyup', (e) => {
           document.querySelector('.country-code-list').appendChild(listItem)
         }
       }
-      console.log('before check')
+      //console.log('before check')
       $(document).click(function (evt) {
-        console.log(evt.target.id)
+        //console.log(evt.target.id)
         if (countries.indexOf(evt.target.id) != -1) {
           displayCountry(evt.target.id)
 
@@ -525,7 +525,7 @@ inputCountry.addEventListener('keyup', (e) => {
           }
           document.querySelector('.country-code-list').style.display = 'none'
         } else if (evt.target.id == 'country-code-input') {
-          console.log('that')
+          //console.log('that')
           if (evt.target.value !== '') {
             removeElementsCountry()
             for (let i of countries) {

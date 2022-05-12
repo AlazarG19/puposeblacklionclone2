@@ -32,3 +32,8 @@
   .user-guide > a:hover {
     box-shadow: 12px 6px 6px rgb(64 224 208 / 20%);
   }
+  .error-message-agree{
+    display: none;
+    color: red;
+    padding-left: 10px;
+  }
