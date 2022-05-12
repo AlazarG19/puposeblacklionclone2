@@ -80,7 +80,7 @@ toggle.addEventListener('change', (event) => {
     let input = document.getElementById('referal-name-input')
     //console.log(input, 'input')
     input.addEventListener('keyup', (e) => {
-      fetch('https://apiforsample.herokuapp.com/referal')
+      fetch('./referal.json')
         .then((response) => response.json())
         .then((data) => {
           let referal2 = data.referal
@@ -216,7 +216,7 @@ toggle.addEventListener('change', (event) => {
       // console.log(sortedNames)
       //loop through above array
       // Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
-      fetch('https://apiforsample.herokuapp.com/referal')
+      fetch('./referal.json')
         .then((response) => response.json())
         .then((data) => {
           let countries = data.referal
@@ -347,7 +347,7 @@ inputCode.addEventListener('keyup', (e) => {
   // console.log(sortedNames)
   //loop through above array
   // Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
-  fetch('https://apiforsample.herokuapp.com/referal')
+  fetch('./referal.json')
     .then((response) => response.json())
     .then((data) => {
       let countries = data.referal
@@ -465,9 +465,10 @@ function removeElementsCode() {
 }
 let inputCountry = document.getElementById('country-code-input')
 // console.log(inputCountry, 'input')
-function displayCountry(value, key) {
+function displayCountry(value) {
+  // console.log(value,"value")
+  // console.log(inputCountry)
   inputCountry.value = value
-  document.querySelector('#country-code-input').value = key
   removeElementsCountry()
   //console.log('display country called')
 }
@@ -483,7 +484,7 @@ inputCountry.addEventListener('keyup', (e) => {
   //loop through above array
   // Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
   //console.log('input country touced')
-  fetch('https://apiforsample.herokuapp.com/countries')
+  fetch('./countries.json')
     .then((response) => response.json())
     .then((data) => {
       let countries = data.countries
