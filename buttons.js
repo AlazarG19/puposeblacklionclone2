@@ -53,6 +53,27 @@ const uncheckall1 = (type) => {
     }
   })
 }
+const referalNameValue =()=>{
+let toggle = document.querySelector('.toggle__input')
+if (toggle.checked){
+  let referNameInput = document.querySelector("#referal-name-input")
+  return referNameInput.value
+}else{
+  let referNamePlaceholder = document.querySelector("#refered_name")
+  return referNamePlaceholder.placeholder
+}
+}
+const referalCodeValue =()=>{
+  let toggle = document.querySelector('.toggle__input')
+  if (toggle.checked){
+    let referCodePlaceholder = document.querySelector("#refered_code")
+    return referCodePlaceholder.placeholder
+  }else{
+    let referCodeInput = document.querySelector("#referal-code-input")
+    return referCodeInput.value
+    
+  }
+  }
 // uncheckall()
 checkbox.forEach((check) => {
   check.addEventListener('change', () => {
@@ -170,12 +191,12 @@ checkbox2.forEach((check) => {
             </div>
     `
       let checkbox3 = document.querySelectorAll('.abyssinia_choice_checkbox')
-      console.log('checkbox3', checkbox3)
+      //console.log('checkbox3', checkbox3)
       const uncheckall3 = (type) => {
         checkbox3.forEach((check) => {
           if (type === check.dataset.type) {
           } else {
-            console.log(check.dataset.type)
+            //console.log(check.dataset.type)
             check.checked = false
           }
         })
@@ -249,7 +270,7 @@ checkbox2.forEach((check) => {
               You have to choose a payment options
             </div>`
       let checkbox5 = document.querySelectorAll('.dashen_choice_checkbox')
-      console.log('checkbox5', checkbox5)
+      //console.log('checkbox5', checkbox5)
       const uncheckall5 = (type) => {
         checkbox5.forEach((check) => {
           if (type === check.dataset.type) {
@@ -263,9 +284,9 @@ checkbox2.forEach((check) => {
         check.addEventListener('change', () => {
           document.querySelector('.percentage-error5').style.display = 'none'
           uncheckall5(check.dataset.type)
-          console.log('this5')
+          //console.log('this5')
         })
-        // console.log()
+        // //console.log()
       })
       uncheckall5()
     }
@@ -310,7 +331,17 @@ const Country = document.getElementById('country-code-input')
 const ZipCode = document.getElementById('ZipCode')
 const Email = document.getElementById('Email')
 const Nationality = document.getElementById('Nationality')
-
+let togglebtn = document.querySelector('.toggle__input')
+let ReferalCheck = togglebtn.checked?document.querySelector('#referal-name-input'):document.querySelector('#referal-code-input')
+togglebtn.addEventListener('change', (event) => {
+  if (event.currentTarget.checked) {
+    ReferalCheck = togglebtn.checked?document.querySelector('#referal-name-input'):document.querySelector('#referal-code-input')
+    // console.log("referalcheck changed")
+  } else {
+    ReferalCheck = togglebtn.checked?document.querySelector('#referal-name-input'):document.querySelector('#referal-code-input')
+    // console.log("referalcheck changed")
+  }
+})
 // form validation and next and prev buttons fucntionality are connected
 function checkInputs() {
   // trim to remove the whitespaces
@@ -326,6 +357,12 @@ function checkInputs() {
   const EmailValue = Email.value.trim()
   const NationalityValue = Nationality.value.trim()
   const CountryValue = Country.value.trim()
+  const ReferalCheckValue = ReferalCheck.value.trim()
+  if(ReferalCheckValue === ""){
+    setErrorFor3(ReferalCheck, 'Referal cannot be blank')
+  } else {
+    setSuccessFor3(ReferalCheck)
+  }
   if (CountryValue === '') {
     setErrorFor2(Country, 'Country cannot be blank')
   } else {
@@ -399,13 +436,28 @@ function Validated() {
     City.dataset.valid === 'true' &&
     ZipCode.dataset.valid === 'true' &&
     Email.dataset.valid === 'true' &&
-    Nationality.dataset.valid === 'true'
+    Nationality.dataset.valid === 'true' &&
+    ReferalCheck.dataset.valid === "true"
   )
+}
+function setErrorFor3 (input,message) {
+  // console.log(input)
+  const formControl2 = input.parentElement
+  const formControl = formControl2.parentElement
+  input.dataset.valid = 'false'
+  const small = formControl.querySelector('small')
+  formControl.className = 'col-12 col-sm-6 referal-container form-control2 error'
+  small.innerText = message
+}
+function setSuccessFor3(input) {
+  input.dataset.valid = 'true'
+  const formControl2 = input.parentElement
+  const formControl = formControl2.parentElement
+  formControl.className = 'col-12 col-sm-6 form-control2 referal-container success'
 }
 function setErrorFor(input, message) {
   const formControl = input.parentElement
   input.dataset.valid = 'false'
-  // console.log(formControl)
   const small = formControl.querySelector('small')
   formControl.className = 'col-12 col-sm-6 form-control2 error'
   small.innerText = message
@@ -414,7 +466,7 @@ function setErrorFor2(input, message) {
   const formControl = input.parentElement
   input.dataset.valid = 'false'
   if (input.id === 'State') {
-    console.log('state')
+    //console.log('state')
     const small = formControl.querySelector('small')
     formControl.className =
       'col-12 col-lg-3 col-md-6 col-sm-6 form-control2 error state-col'
@@ -506,7 +558,7 @@ for (let i = 1; i < 5; i++) {
         document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
         document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
         for (let j = i; j < 5; j++) {
-          console.log('j', j)
+          //console.log('j', j)
           document.querySelector(
             `.section${j}`
           ).style.transform = `translate(-${i}00vw)`
@@ -516,7 +568,7 @@ for (let i = 1; i < 5; i++) {
           document.querySelector(
             `.section${j}`
           ).style.msTransform = `translate(-${i}00vw)`
-          console.log(`.section${j + 1}`)
+          //console.log(`.section${j + 1}`)
           document.querySelector(
             `.section${j + 1}`
           ).style.transform = `translate(-${i}00vw)`
@@ -529,7 +581,7 @@ for (let i = 1; i < 5; i++) {
         }
       }
     } else if (i === 3) {
-      console.log(checkexists2)
+      //console.log(checkexists2)
       if (!checkexists2()) {
         document.querySelector('.percentage-error2').style.display = 'block'
       } else {
@@ -541,7 +593,7 @@ for (let i = 1; i < 5; i++) {
             document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
             document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
             for (let j = i; j < 5; j++) {
-              console.log('j', j)
+              //console.log('j', j)
               document.querySelector(
                 `.section${j}`,
               ).style.transform = `translate(-${i}00vw)`
@@ -570,7 +622,7 @@ for (let i = 1; i < 5; i++) {
             document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
             document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
             for (let j = i; j < 5; j++) {
-              console.log('j', j)
+              //console.log('j', j)
               document.querySelector(
                 `.section${j}`,
               ).style.transform = `translate(-${i}00vw)`
@@ -598,7 +650,7 @@ for (let i = 1; i < 5; i++) {
       document.querySelector(`.blue-dot${i + 1}`).style.display = 'block'
       document.querySelector(`.txt${i + 1}`).style.color = '#007afd'
       for (let j = i; j < 5; j++) {
-        console.log('j', j)
+        //console.log('j', j)
         document.querySelector(
           `.section${j}`,
         ).style.transform = `translate(-${i}00vw)`
@@ -655,46 +707,54 @@ for (let i = 2; i <= 5; i++) {
 let NumberOfShares = document.querySelector("#number_share")
 let ShareAmount1 = document.querySelector("#initial_share")
 const submit = document.querySelector(".submit")
-console.log(ShareAmount1.value)
+//console.log(ShareAmount1.value)
 submit.onclick = () =>{
-  let a = whichcheck2()
-  let b;
-  if(a === "abyssinia"){
-    b = whichcheck3()
-  }else if (a === "dashen"){
-    b = whichcheck5()
+  let agreementBox = document.querySelector("#agreement-input")
+  console.log(agreementBox.checked)
+  if(agreementBox.checked){
+    let a = whichcheck2()
+    let b;
+    if(a === "abyssinia"){
+      b = whichcheck3()
+    }else if (a === "dashen"){
+      b = whichcheck5()
+    }
+    //console.log(a)
+    //console.log(b)
+    const formdata = {
+      FirstName : FirstName.value,
+      MiddleName:MiddleName.value,
+      LastName:LastName.value,
+      PhoneNumber:PhoneNumber.value,
+      HouseNumber:HouseNumber.value,
+      Country:Country.value,
+      StreetAddress:StreetAddress.value,
+      State:State.value,
+      City:City.value,
+      ZipCode:ZipCode.value,
+      Nationality:Nationality.value,
+      Email:Email.value,
+      NumberOfShares:NumberOfShares.value,
+      ShareAmount1:ShareAmount1.placeholder,
+      PaymentPercentage:whichcheck1(),
+      Premium : parseInt(NumberOfShares.value) *5,
+      ShareAmount2:parseInt(NumberOfShares.value) * parseInt(whichcheck1()),
+      totalPrice:parseInt(NumberOfShares.value) * parseInt(whichcheck1()) +(parseInt(NumberOfShares.value) *5),
+      InternationalPayment : a,
+      AvailablePayment: b,
+      referalCodeValue : referalCodeValue(),
+      referalNameValue : referalNameValue()
+    }
+    console.log(formdata)
+  //   const api = axios.create({baseURL: 'http://example.com'})
+  // api.post('/user/12345', formdata)
+  // .then(res => {
+  //      console.log(res)
+  // })
+  // .catch(error => {
+  //      console.log(error)
+  // })
+  }else{
+    console.log("please check the uncehck box")
   }
-  console.log(a)
-  console.log(b)
-  const formdata = {
-    FirstName : FirstName.value,
-    MiddleName:MiddleName.value,
-    LastName:LastName.value,
-    PhoneNumber:PhoneNumber.value,
-    HouseNumber:HouseNumber.value,
-    Country:Country.value,
-    StreetAddress:StreetAddress.value,
-    State:State.value,
-    City:City.value,
-    ZipCode:ZipCode.value,
-    Nationality:Nationality.value,
-    Email:Email.value,
-    NumberOfShares:NumberOfShares.value,
-    ShareAmount1:ShareAmount1.placeholder,
-    PaymentPercentage:whichcheck1(),
-    Premium : parseInt(NumberOfShares.value) *5,
-    ShareAmount2:parseInt(NumberOfShares.value) * parseInt(whichcheck1()),
-    totalPrice:parseInt(NumberOfShares.value) * parseInt(whichcheck1()) +(parseInt(NumberOfShares.value) *5),
-    InternationalPayment : a,
-    AvailablePayment: b
-  }
-  console.log(formdata)
-  const api = axios.create({baseURL: 'http://example.com'})
-api.post('/user/12345', formdata)
-.then(res => {
-     console.log(res)
-})
-.catch(error => {
-     console.log(error)
-})
 }

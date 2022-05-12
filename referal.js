@@ -47,8 +47,9 @@ let toggle = document.querySelector('.toggle__input')
 toggle.addEventListener('change', (event) => {
   if (event.currentTarget.checked) {
     toggle_txt_value.innerHTML = 'true'
-    referalContainer.innerHTML = `<div class="row" id="referal">
-    <div class="col-12 col-sm-6 referal-container">
+    referalContainer.innerHTML = `
+    <div class="row" id="referal">
+    <div class="col-12 col-sm-6 referal-container form-control2">
       <div class="input-group col-6 referal-name-container">
         <!-- <label class="referal-name-label" > Referal Name</label> -->
 
@@ -63,6 +64,7 @@ toggle.addEventListener('change', (event) => {
           class="referal-name-list col-sm-12 col-md-12 col-lg-12 col-xl-6"
         ></ul>
       </div>
+      <small></small>
     </div>
     <div class="col-12 col-sm-6 refered-container standard_input">
       <input
@@ -180,7 +182,7 @@ toggle.addEventListener('change', (event) => {
   } else {
     toggle_txt_value.innerHTML = 'false'
     referalContainer.innerHTML = `<div class="row" id="referal">
-    <div class="col-12 col-sm-6 referal-container">
+    <div class="col-12 col-sm-6 referal-container form-control2">
       <div class="input-group col-6 referal-code-container">
         <!-- <label class="referal-code-label" > Referal Code</label> -->
 
@@ -189,12 +191,11 @@ toggle.addEventListener('change', (event) => {
           type="text"
           id="referal-code-input"
           placeholder="Referal-code"
+          data-valid="false"
         />
-
-        <ul
-          class="referal-code-list col-sm-12 col-md-12 col-lg-12 col-xl-6"
-        ></ul>
+        <ul class="referal-code-list col-12"></ul>
       </div>
+      <small></small>
     </div>
     <div class="col-12 col-sm-6 refered-container standard_input">
       <input

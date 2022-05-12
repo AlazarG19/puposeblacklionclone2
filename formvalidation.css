@@ -26,7 +26,7 @@
 	top: 40px;
 	right: 10px;
 }
-
+/* 
 .form-control2.success i.fa-check-circle {
 	color: #2ecc71;
 	visibility: visible;
@@ -35,7 +35,7 @@
 .form-control2.error i.fa-exclamation-circle {
 	color: #e74c3c;
 	visibility: visible;
-}
+} */
 
 .form-control2 small {
 	color: #e74c3c;
@@ -44,7 +44,6 @@
     left: 10px;
 	visibility: hidden;
 }
-
 .form-control2.error small {
 	visibility: visible;
 }

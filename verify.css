@@ -10,6 +10,7 @@
   }
   .agreement {
     padding-left: 25px;
+    display: flex;
   }
   .agreement > input {
     margin: 13px;
