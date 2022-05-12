@@ -60,14 +60,14 @@ if (toggle.checked){
   return referNameInput.value
 }else{
   let referNamePlaceholder = document.querySelector("#refered_name")
-  return referNamePlaceholder.placeholder
+  return referNamePlaceholder.value
 }
 }
 const referalCodeValue =()=>{
   let toggle = document.querySelector('.toggle__input')
   if (toggle.checked){
     let referCodePlaceholder = document.querySelector("#refered_code")
-    return referCodePlaceholder.placeholder
+    return referCodePlaceholder.value
   }else{
     let referCodeInput = document.querySelector("#referal-code-input")
     return referCodeInput.value
@@ -77,9 +77,9 @@ const referalCodeValue =()=>{
 // uncheckall()
 checkbox.forEach((check) => {
   check.addEventListener('change', () => {
-    premium.placeholder = 5 * parseInt(numberShare.value)
-    sharesAmount.placeholder = check.dataset.value * parseInt(numberShare.value)
-    totalPrice.placeholder =
+    premium.value = 5 * parseInt(numberShare.value)
+    sharesAmount.value = check.dataset.value * parseInt(numberShare.value)
+    totalPrice.value =
       check.dataset.value * parseInt(numberShare.value) +
       5 * parseInt(numberShare.value)
     shares_value.style.display = 'block'
@@ -300,15 +300,15 @@ $(document).ready(function () {
     // Print entered value in a div box
     // console.log()
     if (this.value.length > 0) {
-      document.querySelector('#initial_share').placeholder =
+      document.querySelector('#initial_share').value =
         evt.target.value * 100
       sharesWrapper.style.display = 'block'
       checkbox.forEach((check) => {
         if (check.checked) {
-          premium.placeholder = 5 * parseInt(numberShare.value)
-          sharesAmount.placeholder =
+          premium.value = 5 * parseInt(numberShare.value)
+          sharesAmount.value =
             check.dataset.value * parseInt(numberShare.value)
-          totalPrice.placeholder =
+          totalPrice.value =
             check.dataset.value * parseInt(numberShare.value) +
             5 * parseInt(numberShare.value)
         }

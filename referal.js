@@ -169,7 +169,7 @@ toggle.addEventListener('change', (event) => {
     })
     function display(value, key) {
       input.value = value
-      document.querySelector('#refered_code').placeholder = key
+      document.querySelector('#refered_code').value = key
       removeElements()
     }
     function removeElements() {
@@ -326,7 +326,7 @@ toggle.addEventListener('change', (event) => {
     })
     function displayCode(value, key) {
       inputCode.value = value
-      document.querySelector('#refered_name').placeholder = key
+      document.querySelector('#refered_name').value = key
       removeElementsCode()
     }
     function removeElementsCode() {
@@ -453,7 +453,7 @@ inputCode.addEventListener('keyup', (e) => {
 })
 function displayCode(value, key) {
   inputCode.value = value
-  document.querySelector('#refered_name').placeholder = key
+  document.querySelector('#refered_name').value = key
   removeElementsCode()
 }
 function removeElementsCode() {
@@ -467,7 +467,7 @@ let inputCountry = document.getElementById('country-code-input')
 // console.log(inputCountry, 'input')
 function displayCountry(value, key) {
   inputCountry.value = value
-  document.querySelector('#country-code-input').placeholder = key
+  document.querySelector('#country-code-input').value = key
   removeElementsCountry()
   //console.log('display country called')
 }
